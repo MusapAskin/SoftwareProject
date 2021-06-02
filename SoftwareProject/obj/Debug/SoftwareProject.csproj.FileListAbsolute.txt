@@ -1,0 +1,12 @@
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.csprojAssemblyReference.cache
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.LoginForm.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.Properties.Resources.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.csproj.GenerateResource.cache
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\bin\Debug\SoftwareProject.exe.config
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\bin\Debug\SoftwareProject.exe
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\bin\Debug\SoftwareProject.pdb
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.exe
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.pdb
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.CompanyForm.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.ProjePanel.resources
