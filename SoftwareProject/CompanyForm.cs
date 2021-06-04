@@ -21,12 +21,12 @@ namespace SoftwareProject
 
         void GetCompany()
         {
-            this.companyTableAdapter.Fill(this.companyData.Company);
+            this.companyTableAdapter.Fill(this.company._Company);
         }
 
         private void CompanyForm_Load(object sender, EventArgs e)
         {
-
+           
             GetCompany();
 
             SqlCommand command = new SqlCommand("Select sectorName From Sector", c.Sql());
@@ -87,8 +87,9 @@ namespace SoftwareProject
                 else
                 {
                     MessageBox.Show("Hata!! Lütfen Bilgileri eksiksiz giriniz.");
-                }  
-            }catch (Exception ex)
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -96,40 +97,33 @@ namespace SoftwareProject
             GetCompany();
         }
 
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+            SqlCommand command = new SqlCommand("Delete From Company Where companyID=@companyID", c.Sql());
+            command.Parameters.AddWithValue("@companyID", Convert.ToInt32(CompanyID.Text));
+            int i = command.ExecuteNonQuery();
+            if (i!=0)
+            {
+                MessageBox.Show("Kayıt Silindi");
+            }
+            else
+            {
+                MessageBox.Show("Hata!!Lütfen bilgileri kontrol ediniz.");
+            }
+
+            GetCompany();
+
+        }
+
         private void CompanyDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             CompanyID.Text = CompanyDataGridView.CurrentRow.Cells[0].Value.ToString();
             CompanyName.Text = CompanyDataGridView.CurrentRow.Cells[1].Value.ToString();
-            SectorNameComboBox.Text = CompanyDataGridView.CurrentRow.Cells[6].Value.ToString();
             CompanyPhone.Text = CompanyDataGridView.CurrentRow.Cells[2].Value.ToString();
             CompanyMail.Text = CompanyDataGridView.CurrentRow.Cells[3].Value.ToString();
             CompanyAdress.Text = CompanyDataGridView.CurrentRow.Cells[4].Value.ToString();
-
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlCommand command = new SqlCommand("Delete From Company Where companyID=@companyID", c.Sql());
-                command.Parameters.AddWithValue("@companyID", Convert.ToInt32(CompanyID.Text));
-                int i = command.ExecuteNonQuery();
-
-                if (i != 0)
-                {
-                    MessageBox.Show("Şirket Kaydı Başarıyla Silindi.");
-                }
-                else
-                {
-                    MessageBox.Show("Hata!! Lütfen Kaydı Kontrol Ediniz.");
-                }
-                c.Sql().Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            GetCompany();
+            SectorNameComboBox.Text = CompanyDataGridView.CurrentRow.Cells[5].Value.ToString();
         }
     }
 

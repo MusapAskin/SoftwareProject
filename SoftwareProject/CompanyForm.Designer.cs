@@ -38,34 +38,31 @@ namespace SoftwareProject
             this.CreateCompany = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CompanyPhone = new System.Windows.Forms.TextBox();
+            this.CompanyID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SectorNameComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CompanyAdress = new System.Windows.Forms.TextBox();
             this.CompanyMail = new System.Windows.Forms.TextBox();
-            this.CompanyPhone = new System.Windows.Forms.TextBox();
-            this.dataSet1 = new SoftwareProject.DataSet1();
             this.CompanyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyData = new SoftwareProject.CompanyData();
-            this.companyTableAdapter = new SoftwareProject.CompanyDataTableAdapters.CompanyTableAdapter();
+            this.company = new SoftwareProject.Company();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CompanyID = new System.Windows.Forms.TextBox();
+            this.companyTableAdapter = new SoftwareProject.CompanyTableAdapters.CompanyTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.company)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -119,6 +116,7 @@ namespace SoftwareProject
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CompanyPhone);
             this.groupBox1.Controls.Add(this.CompanyID);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.SectorNameComboBox);
@@ -127,7 +125,6 @@ namespace SoftwareProject
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.CompanyAdress);
             this.groupBox1.Controls.Add(this.CompanyMail);
-            this.groupBox1.Controls.Add(this.CompanyPhone);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.CreateCompany);
             this.groupBox1.Controls.Add(this.CompanyName);
@@ -139,6 +136,31 @@ namespace SoftwareProject
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şirket Kayıt";
+            // 
+            // CompanyPhone
+            // 
+            this.CompanyPhone.Location = new System.Drawing.Point(122, 148);
+            this.CompanyPhone.Name = "CompanyPhone";
+            this.CompanyPhone.Size = new System.Drawing.Size(144, 20);
+            this.CompanyPhone.TabIndex = 15;
+            // 
+            // CompanyID
+            // 
+            this.CompanyID.Enabled = false;
+            this.CompanyID.Location = new System.Drawing.Point(122, 40);
+            this.CompanyID.Name = "CompanyID";
+            this.CompanyID.Size = new System.Drawing.Size(144, 20);
+            this.CompanyID.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(25, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Şirket No :";
             // 
             // SectorNameComboBox
             // 
@@ -193,18 +215,6 @@ namespace SoftwareProject
             this.CompanyMail.Size = new System.Drawing.Size(144, 20);
             this.CompanyMail.TabIndex = 7;
             // 
-            // CompanyPhone
-            // 
-            this.CompanyPhone.Location = new System.Drawing.Point(122, 148);
-            this.CompanyPhone.Name = "CompanyPhone";
-            this.CompanyPhone.Size = new System.Drawing.Size(144, 20);
-            this.CompanyPhone.TabIndex = 6;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // CompanyDataGridView
             // 
             this.CompanyDataGridView.AllowUserToAddRows = false;
@@ -218,7 +228,6 @@ namespace SoftwareProject
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
             this.sectorIDDataGridViewTextBoxColumn});
             this.CompanyDataGridView.DataSource = this.companyBindingSource;
             this.CompanyDataGridView.Location = new System.Drawing.Point(320, 19);
@@ -263,13 +272,6 @@ namespace SoftwareProject
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "projectID";
-            this.dataGridViewTextBoxColumn6.HeaderText = "projectID";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
             // sectorIDDataGridViewTextBoxColumn
             // 
             this.sectorIDDataGridViewTextBoxColumn.DataPropertyName = "sectorID";
@@ -280,16 +282,12 @@ namespace SoftwareProject
             // companyBindingSource
             // 
             this.companyBindingSource.DataMember = "Company";
-            this.companyBindingSource.DataSource = this.companyData;
+            this.companyBindingSource.DataSource = this.company;
             // 
-            // companyData
+            // company
             // 
-            this.companyData.DataSetName = "CompanyData";
-            this.companyData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // companyTableAdapter
-            // 
-            this.companyTableAdapter.ClearBeforeFill = true;
+            this.company.DataSetName = "Company";
+            this.company.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DeleteButton
             // 
@@ -317,23 +315,9 @@ namespace SoftwareProject
             this.UpdateButton.UseVisualStyleBackColor = false;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // label7
+            // companyTableAdapter
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(25, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Şirket No :";
-            // 
-            // CompanyID
-            // 
-            this.CompanyID.Enabled = false;
-            this.CompanyID.Location = new System.Drawing.Point(122, 40);
-            this.CompanyID.Name = "CompanyID";
-            this.CompanyID.Size = new System.Drawing.Size(144, 20);
-            this.CompanyID.TabIndex = 14;
+            this.companyTableAdapter.ClearBeforeFill = true;
             // 
             // CompanyForm
             // 
@@ -345,14 +329,14 @@ namespace SoftwareProject
             this.Controls.Add(this.CompanyDataGridView);
             this.Controls.Add(this.groupBox1);
             this.Name = "CompanyForm";
+            this.ShowIcon = false;
             this.Text = "Company";
             this.Load += new System.EventHandler(this.CompanyForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.company)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,30 +360,23 @@ namespace SoftwareProject
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox CompanyAdress;
         private System.Windows.Forms.TextBox CompanyMail;
-        private System.Windows.Forms.TextBox CompanyPhone;
         private System.Windows.Forms.DataGridView CompanyDataGridView;
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyPhoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyMailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyAdressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn projectIDDataGridViewTextBoxColumn;
-        private SoftwareProject.DataSet1 dataSet1;
+ 
         private System.Windows.Forms.ComboBox SectorNameComboBox;
-        private CompanyData companyData;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.TextBox CompanyID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox CompanyPhone;
+        private Company company;
         private System.Windows.Forms.BindingSource companyBindingSource;
-        private CompanyDataTableAdapters.CompanyTableAdapter companyTableAdapter;
+        private CompanyTableAdapters.CompanyTableAdapter companyTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn sectorIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.TextBox CompanyID;
-        private System.Windows.Forms.Label label7;
     }
 }

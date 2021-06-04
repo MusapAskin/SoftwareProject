@@ -9,4 +9,5 @@ C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\bin\Debug\SoftwareP
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.exe
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.pdb
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.CompanyForm.resources
-C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.ProjePanel.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.NewProjectForm.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.ProjectForm.resources
