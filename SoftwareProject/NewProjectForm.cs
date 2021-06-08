@@ -52,7 +52,7 @@ namespace SoftwareProject
 
         }
 
-        private void ProjectAdd_Click(object sender, EventArgs e)
+        private void AddProjectButton_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -78,6 +78,7 @@ namespace SoftwareProject
                     MessageBox.Show("Hata!! Lütfen Bilgileri eksiksiz giriniz.");
                 }
                 c.Sql().Close();
+
             }
             catch (Exception ex)
             {
@@ -93,7 +94,7 @@ namespace SoftwareProject
             int i = command.ExecuteNonQuery();
             if (i != 0)
             {
-                MessageBox.Show("Kayıt Silindi");
+                MessageBox.Show("Kayıt Silindi", "YSOFT", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -117,7 +118,60 @@ namespace SoftwareProject
 
         }
 
+        private void ProjecUpdateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("Update Project Set projectName=@p1,projectCost=@p2,adminID=@p3,designerID=@p4,developerID=@p5,testerID=@p6,analystID=@p7,companyID=@p8,projectStatus=@p9  Where projectID=@projectID", c.Sql());
+                command.Parameters.AddWithValue("@projectID", Convert.ToInt32(ProjectID.Text));
+                command.Parameters.AddWithValue("@p1", ProjectName.Text);
+                command.Parameters.AddWithValue("@p2", Convert.ToDouble(ProjectCost.Text));
+                command.Parameters.AddWithValue("@p3", AdminComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p4", DesignerComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p5", DeveloperComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p6", TesterComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p7", AnalystComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p8", CompanyComboBox.SelectedIndex + 1);
+                command.Parameters.AddWithValue("@p9", Convert.ToBoolean(ProjectStatus.Checked));
 
+                int i = command.ExecuteNonQuery();
+
+                if (i != 0)
+                {
+                    MessageBox.Show("Proje Listesi Başarıyla Güncellendi.");
+                }
+                else
+                {
+                    MessageBox.Show("Hata!! Lütfen Bilgileri eksiksiz giriniz.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            c.Sql().Close();
+            GetProject();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            ProjectForm project = new ProjectForm();
+            project.Show();
+            Hide();
+            
+        }
+
+        private void ProjectStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ProjectStatus.Checked)
+            {
+                ProjectStatus.Text = "Aktif";
+            }
+            else
+            {
+                ProjectStatus.Text = "Pasif";
+            }
+        }
     }
 }
 

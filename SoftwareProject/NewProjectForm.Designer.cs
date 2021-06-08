@@ -39,9 +39,8 @@ namespace SoftwareProject
             this.label10 = new System.Windows.Forms.Label();
             this.ProjectID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DeleteProjectButton = new System.Windows.Forms.Button();
             this.CompanyComboBox = new System.Windows.Forms.ComboBox();
-            this.ProjectAdd = new System.Windows.Forms.Button();
+            this.AddProjectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,10 +51,8 @@ namespace SoftwareProject
             this.ProjectStatus = new System.Windows.Forms.CheckBox();
             this.ProjectName = new System.Windows.Forms.TextBox();
             this.ProjectCost = new System.Windows.Forms.TextBox();
+            this.DeleteProjectButton = new System.Windows.Forms.Button();
             this.ProjectDataGridView = new System.Windows.Forms.DataGridView();
-            this.project = new SoftwareProject.Project();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectTableAdapter = new SoftwareProject.ProjectTableAdapters.ProjectTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,14 +65,20 @@ namespace SoftwareProject
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.project = new SoftwareProject.Project();
+            this.projectTableAdapter = new SoftwareProject.ProjectTableAdapters.ProjectTableAdapter();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.ProjecUpdateButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.project)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox1.Controls.Add(this.DesignerComboBox);
             this.groupBox1.Controls.Add(this.DeveloperComboBox);
             this.groupBox1.Controls.Add(this.AnalystComboBox);
@@ -84,9 +87,8 @@ namespace SoftwareProject
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.ProjectID);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.DeleteProjectButton);
             this.groupBox1.Controls.Add(this.CompanyComboBox);
-            this.groupBox1.Controls.Add(this.ProjectAdd);
+            this.groupBox1.Controls.Add(this.AddProjectButton);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -97,12 +99,11 @@ namespace SoftwareProject
             this.groupBox1.Controls.Add(this.ProjectStatus);
             this.groupBox1.Controls.Add(this.ProjectName);
             this.groupBox1.Controls.Add(this.ProjectCost);
-            this.groupBox1.Location = new System.Drawing.Point(30, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 362);
+            this.groupBox1.Size = new System.Drawing.Size(257, 304);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Proje Ekle";
             // 
             // DesignerComboBox
             // 
@@ -111,6 +112,7 @@ namespace SoftwareProject
             this.DesignerComboBox.Name = "DesignerComboBox";
             this.DesignerComboBox.Size = new System.Drawing.Size(121, 21);
             this.DesignerComboBox.TabIndex = 3;
+            this.DesignerComboBox.Text = "Tasarımcı seçiniz";
             // 
             // DeveloperComboBox
             // 
@@ -119,6 +121,7 @@ namespace SoftwareProject
             this.DeveloperComboBox.Name = "DeveloperComboBox";
             this.DeveloperComboBox.Size = new System.Drawing.Size(121, 21);
             this.DeveloperComboBox.TabIndex = 4;
+            this.DeveloperComboBox.Text = "Geliştirici seçiniz";
             // 
             // AnalystComboBox
             // 
@@ -127,6 +130,7 @@ namespace SoftwareProject
             this.AnalystComboBox.Name = "AnalystComboBox";
             this.AnalystComboBox.Size = new System.Drawing.Size(121, 21);
             this.AnalystComboBox.TabIndex = 6;
+            this.AnalystComboBox.Text = "Analistçi seçiniz";
             // 
             // TesterComboBox
             // 
@@ -135,6 +139,7 @@ namespace SoftwareProject
             this.TesterComboBox.Name = "TesterComboBox";
             this.TesterComboBox.Size = new System.Drawing.Size(121, 21);
             this.TesterComboBox.TabIndex = 5;
+            this.TesterComboBox.Text = "Testçi seçiniz";
             // 
             // AdminComboBox
             // 
@@ -143,6 +148,7 @@ namespace SoftwareProject
             this.AdminComboBox.Name = "AdminComboBox";
             this.AdminComboBox.Size = new System.Drawing.Size(121, 21);
             this.AdminComboBox.TabIndex = 2;
+            this.AdminComboBox.Text = "Yönetici seçiniz";
             // 
             // label10
             // 
@@ -170,16 +176,6 @@ namespace SoftwareProject
             this.label1.TabIndex = 45;
             this.label1.Text = "Proje No";
             // 
-            // DeleteProjectButton
-            // 
-            this.DeleteProjectButton.Location = new System.Drawing.Point(148, 333);
-            this.DeleteProjectButton.Name = "DeleteProjectButton";
-            this.DeleteProjectButton.Size = new System.Drawing.Size(75, 23);
-            this.DeleteProjectButton.TabIndex = 10;
-            this.DeleteProjectButton.Text = "Sil";
-            this.DeleteProjectButton.UseVisualStyleBackColor = true;
-            this.DeleteProjectButton.Click += new System.EventHandler(this.DeleteProjectButton_Click);
-            // 
             // CompanyComboBox
             // 
             this.CompanyComboBox.FormattingEnabled = true;
@@ -187,16 +183,18 @@ namespace SoftwareProject
             this.CompanyComboBox.Name = "CompanyComboBox";
             this.CompanyComboBox.Size = new System.Drawing.Size(121, 21);
             this.CompanyComboBox.TabIndex = 7;
+            this.CompanyComboBox.Text = "Şirket seçiniz";
             // 
-            // ProjectAdd
+            // AddProjectButton
             // 
-            this.ProjectAdd.Location = new System.Drawing.Point(67, 333);
-            this.ProjectAdd.Name = "ProjectAdd";
-            this.ProjectAdd.Size = new System.Drawing.Size(75, 23);
-            this.ProjectAdd.TabIndex = 9;
-            this.ProjectAdd.Text = "Ekle";
-            this.ProjectAdd.UseVisualStyleBackColor = true;
-            this.ProjectAdd.Click += new System.EventHandler(this.ProjectAdd_Click);
+            this.AddProjectButton.BackColor = System.Drawing.SystemColors.Info;
+            this.AddProjectButton.Location = new System.Drawing.Point(129, 279);
+            this.AddProjectButton.Name = "AddProjectButton";
+            this.AddProjectButton.Size = new System.Drawing.Size(75, 25);
+            this.AddProjectButton.TabIndex = 9;
+            this.AddProjectButton.Text = "Ekle";
+            this.AddProjectButton.UseVisualStyleBackColor = false;
+            this.AddProjectButton.Click += new System.EventHandler(this.AddProjectButton_Click_1);
             // 
             // label9
             // 
@@ -270,6 +268,7 @@ namespace SoftwareProject
             this.ProjectStatus.TabIndex = 8;
             this.ProjectStatus.Text = "Proje Durumu";
             this.ProjectStatus.UseVisualStyleBackColor = true;
+            this.ProjectStatus.CheckedChanged += new System.EventHandler(this.ProjectStatus_CheckedChanged);
             // 
             // ProjectName
             // 
@@ -285,12 +284,25 @@ namespace SoftwareProject
             this.ProjectCost.Size = new System.Drawing.Size(120, 20);
             this.ProjectCost.TabIndex = 1;
             // 
+            // DeleteProjectButton
+            // 
+            this.DeleteProjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.DeleteProjectButton.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DeleteProjectButton.Location = new System.Drawing.Point(372, 291);
+            this.DeleteProjectButton.Name = "DeleteProjectButton";
+            this.DeleteProjectButton.Size = new System.Drawing.Size(75, 25);
+            this.DeleteProjectButton.TabIndex = 11;
+            this.DeleteProjectButton.Text = "Sil";
+            this.DeleteProjectButton.UseVisualStyleBackColor = false;
+            this.DeleteProjectButton.Click += new System.EventHandler(this.DeleteProjectButton_Click);
+            // 
             // ProjectDataGridView
             // 
             this.ProjectDataGridView.AllowUserToAddRows = false;
             this.ProjectDataGridView.AllowUserToDeleteRows = false;
             this.ProjectDataGridView.AutoGenerateColumns = false;
             this.ProjectDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProjectDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProjectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProjectDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -310,23 +322,9 @@ namespace SoftwareProject
             this.ProjectDataGridView.Name = "ProjectDataGridView";
             this.ProjectDataGridView.ReadOnly = true;
             this.ProjectDataGridView.RowTemplate.Height = 25;
-            this.ProjectDataGridView.Size = new System.Drawing.Size(991, 362);
+            this.ProjectDataGridView.Size = new System.Drawing.Size(921, 273);
             this.ProjectDataGridView.TabIndex = 7;
             this.ProjectDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProjectDataGridView_CellEnter);
-            // 
-            // project
-            // 
-            this.project.DataSetName = "Project";
-            this.project.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataMember = "Project";
-            this.projectBindingSource.DataSource = this.project;
-            // 
-            // projectTableAdapter
-            // 
-            this.projectTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -412,23 +410,63 @@ namespace SoftwareProject
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataMember = "Project";
+            this.projectBindingSource.DataSource = this.project;
+            // 
+            // project
+            // 
+            this.project.DataSetName = "Project";
+            this.project.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // projectTableAdapter
+            // 
+            this.projectTableAdapter.ClearBeforeFill = true;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ExitButton.Location = new System.Drawing.Point(473, 291);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(75, 25);
+            this.ExitButton.TabIndex = 12;
+            this.ExitButton.Text = "Vazgeç";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // ProjecUpdateButton
+            // 
+            this.ProjecUpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ProjecUpdateButton.Location = new System.Drawing.Point(275, 291);
+            this.ProjecUpdateButton.Name = "ProjecUpdateButton";
+            this.ProjecUpdateButton.Size = new System.Drawing.Size(75, 25);
+            this.ProjecUpdateButton.TabIndex = 10;
+            this.ProjecUpdateButton.Text = "Güncelle";
+            this.ProjecUpdateButton.UseVisualStyleBackColor = false;
+            this.ProjecUpdateButton.Click += new System.EventHandler(this.ProjecUpdateButton_Click);
+            // 
             // NewProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 386);
-            this.Controls.Add(this.ProjectDataGridView);
+            this.ClientSize = new System.Drawing.Size(1205, 325);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.ProjecUpdateButton);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.DeleteProjectButton);
+            this.Controls.Add(this.ProjectDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "NewProjectForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewProjectForm";
             this.Load += new System.EventHandler(this.NewProjectForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.project)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,7 +475,7 @@ namespace SoftwareProject
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox CompanyComboBox;
-        private System.Windows.Forms.Button ProjectAdd;
+        private System.Windows.Forms.Button AddProjectButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -486,5 +524,7 @@ namespace SoftwareProject
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button ProjecUpdateButton;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

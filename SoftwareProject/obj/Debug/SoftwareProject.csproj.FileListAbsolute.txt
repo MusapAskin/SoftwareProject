@@ -11,3 +11,5 @@ C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareP
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.CompanyForm.resources
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.NewProjectForm.resources
 C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.ProjectForm.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.Personel.resources
+C:\Users\lenovo\source\repos\SoftwareProject\SoftwareProject\obj\Debug\SoftwareProject.User.resources

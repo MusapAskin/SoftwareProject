@@ -30,16 +30,10 @@ namespace SoftwareProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ActivePojectButton = new System.Windows.Forms.Button();
-            this.StartProject = new System.Windows.Forms.Button();
             this.NewProject = new System.Windows.Forms.Button();
             this.PersonelButton = new System.Windows.Forms.Button();
-            this.PassivePojectButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.project = new SoftwareProject.Project();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectTableAdapter = new SoftwareProject.ProjectTableAdapters.ProjectTableAdapter();
             this.projectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,74 +46,53 @@ namespace SoftwareProject
             this.analystIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox1.SuspendLayout();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.project = new SoftwareProject.Project();
+            this.projectTableAdapter = new SoftwareProject.ProjectTableAdapters.ProjectTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.project)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ActivePojectButton
-            // 
-            this.ActivePojectButton.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ActivePojectButton.Location = new System.Drawing.Point(0, 3);
-            this.ActivePojectButton.Name = "ActivePojectButton";
-            this.ActivePojectButton.Size = new System.Drawing.Size(87, 25);
-            this.ActivePojectButton.TabIndex = 0;
-            this.ActivePojectButton.Text = "Aktif Projeler";
-            this.ActivePojectButton.UseVisualStyleBackColor = true;
-            this.ActivePojectButton.Click += new System.EventHandler(this.ActivePojectButton_Click);
-            // 
-            // StartProject
-            // 
-            this.StartProject.Location = new System.Drawing.Point(12, 288);
-            this.StartProject.Name = "StartProject";
-            this.StartProject.Size = new System.Drawing.Size(134, 23);
-            this.StartProject.TabIndex = 4;
-            this.StartProject.Text = "Projeyi Başlat";
-            this.StartProject.UseVisualStyleBackColor = true;
-            this.StartProject.Click += new System.EventHandler(this.StartProject_Click_1);
             // 
             // NewProject
             // 
-            this.NewProject.Location = new System.Drawing.Point(193, 288);
+            this.NewProject.BackColor = System.Drawing.SystemColors.Info;
+            this.NewProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NewProject.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.NewProject.Location = new System.Drawing.Point(12, 311);
             this.NewProject.Name = "NewProject";
-            this.NewProject.Size = new System.Drawing.Size(128, 23);
-            this.NewProject.TabIndex = 6;
-            this.NewProject.Text = "Yeni Proje ( Ekle / Sil )";
-            this.NewProject.UseVisualStyleBackColor = true;
+            this.NewProject.Size = new System.Drawing.Size(180, 40);
+            this.NewProject.TabIndex = 0;
+            this.NewProject.Text = "Yeni Proje ( Ekle / Sil / Güncelle )";
+            this.NewProject.UseVisualStyleBackColor = false;
             this.NewProject.Click += new System.EventHandler(this.NewProject_Click_1);
             // 
             // PersonelButton
             // 
-            this.PersonelButton.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PersonelButton.Location = new System.Drawing.Point(161, 3);
+            this.PersonelButton.BackColor = System.Drawing.SystemColors.Info;
+            this.PersonelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PersonelButton.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.PersonelButton.Location = new System.Drawing.Point(12, 12);
             this.PersonelButton.Name = "PersonelButton";
             this.PersonelButton.Size = new System.Drawing.Size(87, 25);
-            this.PersonelButton.TabIndex = 7;
+            this.PersonelButton.TabIndex = 1;
             this.PersonelButton.Text = "Personel";
-            this.PersonelButton.UseVisualStyleBackColor = true;
+            this.PersonelButton.UseVisualStyleBackColor = false;
             this.PersonelButton.Click += new System.EventHandler(this.PersonelButton_Click);
             // 
-            // PassivePojectButton
+            // ExitButton
             // 
-            this.PassivePojectButton.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PassivePojectButton.Location = new System.Drawing.Point(80, 3);
-            this.PassivePojectButton.Name = "PassivePojectButton";
-            this.PassivePojectButton.Size = new System.Drawing.Size(87, 25);
-            this.PassivePojectButton.TabIndex = 8;
-            this.PassivePojectButton.Text = "Pasif Projeler";
-            this.PassivePojectButton.UseVisualStyleBackColor = true;
-            this.PassivePojectButton.Click += new System.EventHandler(this.PassivePojectButton_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1037, 240);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
+            this.ExitButton.BackColor = System.Drawing.Color.Crimson;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ExitButton.Location = new System.Drawing.Point(964, 312);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(90, 40);
+            this.ExitButton.TabIndex = 2;
+            this.ExitButton.Text = "Çıkış Yap";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // dataGridView1
             // 
@@ -128,6 +101,7 @@ namespace SoftwareProject
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.projectIDDataGridViewTextBoxColumn,
@@ -143,25 +117,11 @@ namespace SoftwareProject
             this.companyIDDataGridViewTextBoxColumn,
             this.projectStatusDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.projectBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1036, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(1042, 262);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // project
-            // 
-            this.project.DataSetName = "Project";
-            this.project.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataMember = "Project";
-            this.projectBindingSource.DataSource = this.project;
-            // 
-            // projectTableAdapter
-            // 
-            this.projectTableAdapter.ClearBeforeFill = true;
             // 
             // projectIDDataGridViewTextBoxColumn
             // 
@@ -247,39 +207,59 @@ namespace SoftwareProject
             this.projectStatusDataGridViewCheckBoxColumn.Name = "projectStatusDataGridViewCheckBoxColumn";
             this.projectStatusDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataMember = "Project";
+            this.projectBindingSource.DataSource = this.project;
+            // 
+            // project
+            // 
+            this.project.DataSetName = "Project";
+            this.project.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // projectTableAdapter
+            // 
+            this.projectTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.Location = new System.Drawing.Point(211, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 40);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Şirket ( Ekle / Sil / Güncelle )";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 330);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.PassivePojectButton);
+            this.ClientSize = new System.Drawing.Size(1066, 360);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PersonelButton);
             this.Controls.Add(this.NewProject);
-            this.Controls.Add(this.StartProject);
-            this.Controls.Add(this.ActivePojectButton);
+            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ProjectForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectForm";
             this.Load += new System.EventHandler(this.ProjectForm_Load);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.project)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ActivePojectButton;
-        private System.Windows.Forms.Button StartProject;
         private System.Windows.Forms.Button NewProject;
         private System.Windows.Forms.Button PersonelButton;
-        private System.Windows.Forms.Button PassivePojectButton;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Project project;
         private System.Windows.Forms.BindingSource projectBindingSource;
@@ -296,5 +276,7 @@ namespace SoftwareProject
         private System.Windows.Forms.DataGridViewTextBoxColumn analystIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn projectStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button button1;
     }
 }

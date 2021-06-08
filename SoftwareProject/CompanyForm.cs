@@ -99,21 +99,20 @@ namespace SoftwareProject
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+ 
+                SqlCommand command = new SqlCommand("Delete From Company Where companyID=@companyID", c.Sql());
+                command.Parameters.AddWithValue("@companyID", Convert.ToInt32(CompanyID.Text));
+                int i = command.ExecuteNonQuery();
+                if (i != 0)
+                {
+                    MessageBox.Show("Kayıt Silindi","YSOFT",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Hata!!Lütfen bilgileri kontrol ediniz.");
+                }
 
-            SqlCommand command = new SqlCommand("Delete From Company Where companyID=@companyID", c.Sql());
-            command.Parameters.AddWithValue("@companyID", Convert.ToInt32(CompanyID.Text));
-            int i = command.ExecuteNonQuery();
-            if (i!=0)
-            {
-                MessageBox.Show("Kayıt Silindi");
-            }
-            else
-            {
-                MessageBox.Show("Hata!!Lütfen bilgileri kontrol ediniz.");
-            }
-
-            GetCompany();
-
+                GetCompany();
         }
 
         private void CompanyDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -124,6 +123,14 @@ namespace SoftwareProject
             CompanyMail.Text = CompanyDataGridView.CurrentRow.Cells[3].Value.ToString();
             CompanyAdress.Text = CompanyDataGridView.CurrentRow.Cells[4].Value.ToString();
             SectorNameComboBox.Text = CompanyDataGridView.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            ProjectForm project = new ProjectForm();
+            project.Show();
+            Hide();
+
         }
     }
 

@@ -69,7 +69,7 @@ namespace SoftwareProject
             this.CancelButton.Location = new System.Drawing.Point(213, 165);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(85, 35);
-            this.CancelButton.TabIndex = 5;
+            this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "İptal Et";
             this.CancelButton.UseVisualStyleBackColor = false;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -78,10 +78,10 @@ namespace SoftwareProject
             // 
             this.ShowPassword.AutoSize = true;
             this.ShowPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
-            this.ShowPassword.Location = new System.Drawing.Point(171, 126);
+            this.ShowPassword.Location = new System.Drawing.Point(115, 126);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(109, 23);
-            this.ShowPassword.TabIndex = 3;
+            this.ShowPassword.TabIndex = 2;
             this.ShowPassword.Text = "Şifreyi göster";
             this.ShowPassword.UseVisualStyleBackColor = true;
             this.ShowPassword.CheckedChanged += new System.EventHandler(this.ShowPassword_CheckedChanged);
@@ -93,7 +93,7 @@ namespace SoftwareProject
             this.LoginButton.Location = new System.Drawing.Point(104, 165);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(85, 35);
-            this.LoginButton.TabIndex = 4;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Giriş Yap";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -103,7 +103,7 @@ namespace SoftwareProject
             this.UserPassword.Location = new System.Drawing.Point(115, 91);
             this.UserPassword.Name = "UserPassword";
             this.UserPassword.Size = new System.Drawing.Size(171, 29);
-            this.UserPassword.TabIndex = 2;
+            this.UserPassword.TabIndex = 1;
             this.UserPassword.UseSystemPasswordChar = true;
             // 
             // UserName
@@ -111,7 +111,7 @@ namespace SoftwareProject
             this.UserName.Location = new System.Drawing.Point(115, 42);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(171, 29);
-            this.UserName.TabIndex = 1;
+            this.UserName.TabIndex = 0;
             // 
             // label2
             // 
@@ -151,7 +151,6 @@ namespace SoftwareProject
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "LoginForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -17,10 +17,12 @@ namespace SoftwareProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-            Application.Run(new CompanyForm());
-            Application.Run(new ProjectForm());
-            Application.Run(new NewProjectForm());
+           // Application.Run(new LoginForm());
+            //Application.Run(new CompanyForm());
+            //Application.Run(new ProjectForm());
+            //Application.Run(new NewProjectForm());
+            Application.Run(new User());
+
         }
     }
 }

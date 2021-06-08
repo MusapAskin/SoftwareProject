@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SoftwareProject
 {
@@ -24,8 +25,7 @@ namespace SoftwareProject
             this.projectTableAdapter.Fill(this.project._Project);
         }
 
-        private void ProjectForm_Load(object sender, EventArgs e)
-        {
+        private void ProjectForm_Load(object sender, EventArgs e) { 
             GetProject();
         }
 
@@ -33,26 +33,26 @@ namespace SoftwareProject
         {
             NewProjectForm newProject = new NewProjectForm();
             newProject.Show();
-        }
-
-        private void StartProject_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ActivePojectButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PassivePojectButton_Click(object sender, EventArgs e)
-        {
-
+            Hide();
         }
 
         private void PersonelButton_Click(object sender, EventArgs e)
         {
+            Personel personel = new Personel();
+            personel.Show();
+            Hide();
+        }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CompanyForm company = new CompanyForm();
+            company.Show();
+            Hide();
         }
     }
 }
