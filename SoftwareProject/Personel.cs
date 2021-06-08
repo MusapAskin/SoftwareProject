@@ -42,6 +42,7 @@ namespace SoftwareProject
                 command.Parameters.AddWithValue("@p4", Convert.ToInt64(PersonelPhone.Text));
                 command.Parameters.AddWithValue("@p5", PersonelAdress.Text);
                 command.Parameters.AddWithValue("@p6", Convert.ToBoolean(PersonelStatus.Checked));
+
                 if (PersonelJob.Text.Equals("Analistçi"))
                 {
                     SqlCommand command1 = new SqlCommand("insert into Analyst (name, personelID) values(@p1,@p2)", c.Sql());
@@ -52,7 +53,7 @@ namespace SoftwareProject
 
                 }
 
-                else if (PersonelJob.SelectedIndex == 1)
+                else if (PersonelJob.Text.Equals("Geliştirici"))
                 {
                     SqlCommand command1 = new SqlCommand("insert into  Developer (name, personelID) values(@p1,@p2)", c.Sql());
                     command1.Parameters.AddWithValue("@p1", PersonelJob.SelectedValue);
@@ -60,15 +61,15 @@ namespace SoftwareProject
                     command1.ExecuteNonQuery();
                     
                 }
-                else if (PersonelJob.SelectedIndex == 2)
+                else if (PersonelJob.Text.Equals("Tasarımcı"))
                 {
                     SqlCommand command1 = new SqlCommand("insert into   Designer (name, personelID) values(@p1,@p2)", c.Sql());
                     command1.Parameters.AddWithValue("@p1", PersonelJob.SelectedValue);
                     command1.Parameters.AddWithValue("@p2", Convert.ToInt32(PersonelID.Text));
                     command1.ExecuteNonQuery();
-
+                    
                 }
-                else if (PersonelJob.SelectedIndex == 3)
+                else if (PersonelJob.Text.Equals("Testçi"))
                 {
                     SqlCommand command1 = new SqlCommand("insert into  Tester (name, personelID) values(@p1,@p2)", c.Sql());
                     command1.Parameters.AddWithValue("@p1", PersonelJob.SelectedValue);
@@ -118,9 +119,7 @@ namespace SoftwareProject
                 {
                     MessageBox.Show("Hata!!Lütfen bilgileri kontrol ediniz.");
                 }
-
                 GetPersonel();
-            
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
